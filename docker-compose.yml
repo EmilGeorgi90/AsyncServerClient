@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  asyncserverclient:
+    image: ${DOCKER_REGISTRY}asyncserverclient
+    build:
+      context: .\AsyncServerClient
+      dockerfile: Dockerfile
