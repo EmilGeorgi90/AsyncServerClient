@@ -1,32 +1,52 @@
 ﻿<!-- ko with: home -->
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Your information</h2>
-        <p>This section shows how you can call ASP.NET Web API to get the user details.</p>
-        <p data-bind="text: myHometown"></p>
-       
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=273732">Learn more &raquo;</a></p>
-    </div>
 
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET Single Page Application (SPA) helps you build applications that include significant client-side interactions using HTML, CSS, and JavaScript.
-            It's now easier than ever before to getting started writing highly interactive web applications.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=273732">Learn more &raquo;</a></p>
-    </div>
-
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+<Import Namespace="System.Threading.Tasks"></Import>
+<Import Namespace="System.Net"></Import>
+<Import Namespace="System.Net.Sockets"></Import>
+<Import Namespace="System.IO"></Import>
+<script runat="server" language="C#">
+        private static async Task<string> SendRequest(string server,
+        private async void Button1_Click(object sender, System.EventArgs e) { try {
+      string server = "mymachine.network.microsoft.com";
+      int port = 50000;
+      string method = TextBox1.Text;
+      string data = TextBox2.Text;
+      string sResponse = await SendRequest(server, port, method, data);
+      double dResponse = double.Parse(sResponse);
+      TextBox3.Text = dResponse.ToString("F2");
+    }
+    catch (Exception ex) {
+      TextBox3.Text = ex.Message;
+    } }
+</script>
+<head>
+    <title>Demo</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <p>
+                Enter service method:
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            </p>
+            <p>
+                Enter data:
+                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            </p>
+            <p>
+                <asp:Button Text="Send Request" id="Button1"
+                            runat="server" OnClick="Button1_Click"></asp:Button>
+            </p>
+            <p>
+                Response:
+                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            </p>
+            <p>
+                Dummy responsive control:
+                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            </p>
+        </div>
+    </form>
+</body>
 
 <!-- /ko -->

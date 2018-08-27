@@ -106,12 +106,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AsyncServerClient\AsyncServerClient.csproj">
-      <Project>{68C902EB-8B45-4E34-B672-3FFDAAF0530B}</Project>
-      <Name>AsyncServerClient</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
