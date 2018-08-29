@@ -23,47 +23,12 @@ namespace AsyncClientServer.Client.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        static TcpClient client;
+        TcpClient client = null;
         public MainWindow()
         {
-            try
-            {
-                client = new TcpClient();
-                int port = 65432;
-                //gets the possible Host's
-                string server = Dns.GetHostName();
-                //gets IP Host info from variable server
-                IPHostEntry ipHostInfo = Dns.GetHostEntry(server);
-                IPAddress ipAddress = null;
-                //loops into ipHostinfos IPAddress's
-                for (int i = 0; i < ipHostInfo.AddressList.Length; ++i)
-                {
-                    //checks if the current ip addrees Family type is equel InterNetwork
-                    if (ipHostInfo.AddressList[i].AddressFamily ==
-                      AddressFamily.InterNetwork)
-                    {
-                        ipAddress = ipHostInfo.AddressList[i];
-                        break;
-                    }
-                }
-                //throw exception if none were to find
-                if (ipAddress == null)
-                {
-                    throw new Exception("No IPv4 address for server");
-                }
-                this.Connect(ipAddress, port); // Connect
-            }
-            catch (Exception)
-            {
-                throw;
-            }
             InitializeComponent();
         }
-        private async void Connect(IPAddress iPAddress, int port)
-        {
-            await client.ConnectAsync(iPAddress, port);
-        }
+
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -73,7 +38,7 @@ namespace AsyncClientServer.Client.WPF
                 //gets the data from the text box
                 string data = textBox1.Text;
                 //calls the request method
-                Task<string> tsResponse = SendRequest(method, data);
+                Task<string> tsResponse = TCPClientConConfig.SendRequest(client,method, data);
                 //give client text
                 listBox1.Items.Add("Sent request, waiting for response");
                 //waits for response
@@ -83,9 +48,15 @@ namespace AsyncClientServer.Client.WPF
                 listBox1.Items.Add("Received response: " +
                  dResponse.ToString("F2"));
             }
-            catch (Exception ex)
+            catch (FormatException ex)
             {
                 listBox1.Items.Add(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
+                App.Current.Shutdown();
             }
         }
         /// <summary>
@@ -96,39 +67,17 @@ namespace AsyncClientServer.Client.WPF
         /// <param name="method"></param>
         /// <param name="data"></param>
         /// <returns>string, reuslt of request or exception log</returns>
-        private static async Task<string> SendRequest(string method, string data)
-        {
-            try
-            {
-                string response = null;
-
-                //create's the TCP client object
-                //create's the object that streams the data from client to server
-                NetworkStream networkStream = client.GetStream();
-                StreamWriter writer = new StreamWriter(networkStream);
-                StreamReader reader = new StreamReader(networkStream);
-
-                //sets autoflush to true so i will see on its own if we are trying to send something to the sever
-                writer.AutoFlush = true;
-                //request data string (sends to sevrer)
-                string requestData = "method=" + method + "&" + "data=" +
-                  data + "&eor"; // 'End-of-request'
-                                 //write's the request to server async
-                await writer.WriteLineAsync(requestData);
-                //wait for the response
-                response = await reader.ReadLineAsync();
-
-                return response;
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
-        }
+ 
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             client.Dispose();
+        }
+
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            TCPClientConConfig clientConConfig = new TCPClientConConfig();
+            client = await clientConConfig.Connect();
         }
     }
 }
