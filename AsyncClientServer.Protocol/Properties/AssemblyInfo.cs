@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Entity")]
-[assembly: AssemblyDescription("something")]
+[assembly: AssemblyTitle("AsyncClientServer.Protocol")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("somewhere")]
-[assembly: AssemblyProduct("Entity")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("AsyncClientServer.Protocol")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3420514e-aec3-4b84-8a1a-da74b52895ca")]
+[assembly: Guid("f46de84c-4364-45e7-969a-429ea71db28f")]
 
 // Version information for an assembly consists of the following four values:
 //

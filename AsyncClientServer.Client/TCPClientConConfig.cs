@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AsyncClientServer.Protocol;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
@@ -16,7 +17,7 @@ namespace AsyncClientServer.Client
         {
             try
             {
-                TcpClient client = new TcpClient();
+                System.Net.Sockets.TcpClient client = new TcpClient();
                 int port = 65432;
                 //gets the possible Host's
                 string server = Dns.GetHostName();
@@ -61,17 +62,12 @@ namespace AsyncClientServer.Client
                 dataSet.Tables["methods"].Rows.Add("method").SetField<string>("method", method);
                 dataSet.Tables["data"].Rows.Add("data").SetField<string>("data", data);
                 string requestData = Newtonsoft.Json.JsonConvert.SerializeObject(dataSet);
-                //create's the TCP client object
                 //create's the object that streams the data from client to server
                 NetworkStream networkStream = client.GetStream();
                 StreamWriter writer = new StreamWriter(networkStream);
                 StreamReader reader = new StreamReader(networkStream);
                 //sets autoflush to true so i will see on its own if we are trying to send something to the sever
                 writer.AutoFlush = true;
-                //request data string (sends to sevrer)
-                //string requestData = "method=" + method + "&" + "data=" +
-                //  data + "&eor"; // 'End-of-request'
-                //write's the request to server async
                 await writer.WriteLineAsync(requestData);
                 //wait for the response
                 response = await reader.ReadLineAsync();
@@ -81,6 +77,13 @@ namespace AsyncClientServer.Client
             {
                 return ex.Message;
             }
+        }
+
+        public WebRequest CustomProtocol()
+        {
+            WebRequest.RegisterPrefix("custom", new CustomWebRequestCreator());
+            WebRequest req = WebRequest.Create("custom://customHost.contoso.com/");
+            return req;
         }
     }
 }

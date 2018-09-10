@@ -50,5 +50,15 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AsyncClientServer.Protocol\AsyncClientServer.Protocol.csproj">
+      <Project>{f46de84c-4364-45e7-969a-429ea71db28f}</Project>
+      <Name>AsyncClientServer.Protocol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\AsyncClientServer.Entity.csproj">
+      <Project>{3420514e-aec3-4b84-8a1a-da74b52895ca}</Project>
+      <Name>AsyncClientServer.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncClientServer.Client", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncClientServer.Entity", "Entity\AsyncClientServer.Entity.csproj", "{3420514E-AEC3-4B84-8A1A-DA74B52895CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncClientServer.ServerLogic", "AsyncClientServer.ServerLogic\AsyncClientServer.ServerLogic.csproj", "{E0EAFAC4-E579-498E-89FF-AC47E9339915}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncClientServer.Protocol", "AsyncClientServer.Protocol\AsyncClientServer.Protocol.csproj", "{F46DE84C-4364-45E7-969A-429EA71DB28F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{3420514E-AEC3-4B84-8A1A-DA74B52895CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3420514E-AEC3-4B84-8A1A-DA74B52895CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3420514E-AEC3-4B84-8A1A-DA74B52895CA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E0EAFAC4-E579-498E-89FF-AC47E9339915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E0EAFAC4-E579-498E-89FF-AC47E9339915}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E0EAFAC4-E579-498E-89FF-AC47E9339915}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E0EAFAC4-E579-498E-89FF-AC47E9339915}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F46DE84C-4364-45E7-969A-429EA71DB28F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F46DE84C-4364-45E7-969A-429EA71DB28F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F46DE84C-4364-45E7-969A-429EA71DB28F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F46DE84C-4364-45E7-969A-429EA71DB28F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
