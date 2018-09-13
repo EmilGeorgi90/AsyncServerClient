@@ -18,7 +18,7 @@ namespace AsyncClientServer.Client
             try
             {
                 System.Net.Sockets.TcpClient client = new TcpClient();
-                int port = 65432;
+                int port = 44818;
                 //gets the possible Host's
                 string server = Dns.GetHostName();
                 //gets IP Host info from variable server
@@ -41,7 +41,7 @@ namespace AsyncClientServer.Client
                 {
                     throw new Exception("No IPv4 address for server");
                 }
-                await client.ConnectAsync(ipAddress, port); // Connect
+                await client.ConnectAsync(IPAddress.Parse("185.19.132.180"), port); // Connect
                 return client;
             }
             catch (Exception)
