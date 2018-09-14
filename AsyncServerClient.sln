@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncServerClient.Tests", "AsyncServerClient.Tests\AsyncServerClient.Tests.csproj", "{D1E7AFB0-3550-4F5D-8295-3454C7757038}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncClientServer.Server", "..\AsyncClientServer.Server\AsyncClientServer.Server.csproj", "{5048F7FC-78FA-4719-AF79-F436638F4013}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncClientServer.Client.WPF", "AsyncClientServer.Client.WPF\AsyncClientServer.Client.WPF.csproj", "{1536635A-558A-4323-8EF9-578F7C4660DD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncClientServer.Client", "AsyncClientServer.Client\AsyncClientServer.Client.csproj", "{3B24A7E5-CC3C-4A6D-9C27-25563FA3034A}"
@@ -16,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncClientServer.Protocol", "AsyncClientServer.Protocol\AsyncClientServer.Protocol.csproj", "{F46DE84C-4364-45E7-969A-429EA71DB28F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCPService.cs", "TCPService.cs\TCPService.cs.csproj", "{F6E9C231-7B67-4C81-95A7-7271FB950C91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncClientServer.Server", "AsyncClientServer.Server\AsyncClientServer.Server.csproj", "{5048F7FC-78FA-4719-AF79-F436638F4013}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,10 +27,6 @@ Global
 		{D1E7AFB0-3550-4F5D-8295-3454C7757038}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1E7AFB0-3550-4F5D-8295-3454C7757038}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1E7AFB0-3550-4F5D-8295-3454C7757038}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5048F7FC-78FA-4719-AF79-F436638F4013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5048F7FC-78FA-4719-AF79-F436638F4013}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5048F7FC-78FA-4719-AF79-F436638F4013}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5048F7FC-78FA-4719-AF79-F436638F4013}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1536635A-558A-4323-8EF9-578F7C4660DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1536635A-558A-4323-8EF9-578F7C4660DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1536635A-558A-4323-8EF9-578F7C4660DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{F6E9C231-7B67-4C81-95A7-7271FB950C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6E9C231-7B67-4C81-95A7-7271FB950C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6E9C231-7B67-4C81-95A7-7271FB950C91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5048F7FC-78FA-4719-AF79-F436638F4013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5048F7FC-78FA-4719-AF79-F436638F4013}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5048F7FC-78FA-4719-AF79-F436638F4013}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5048F7FC-78FA-4719-AF79-F436638F4013}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

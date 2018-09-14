@@ -94,7 +94,7 @@
     <None Include="TCPService.cs_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\AsyncClientServer.Server\AsyncClientServer.Server.csproj">
+    <ProjectReference Include="..\AsyncClientServer.Server\AsyncClientServer.Server.csproj">
       <Project>{5048F7FC-78FA-4719-AF79-F436638F4013}</Project>
       <Name>AsyncClientServer.Server</Name>
     </ProjectReference>
