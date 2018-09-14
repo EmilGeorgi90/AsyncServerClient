@@ -35,10 +35,6 @@ C:\Users\emil376g\source\repos\AsyncServerClient\AsyncClientServer.Server\bin\De
 C:\Users\emil376g\source\repos\AsyncServerClient\AsyncClientServer.Server\bin\Debug\AsyncClientServer.Server.pdb
 C:\Users\emil376g\source\repos\AsyncServerClient\AsyncClientServer.Server\bin\Debug\Entity.dll
 C:\Users\emil376g\source\repos\AsyncServerClient\AsyncClientServer.Server\bin\Debug\Entity.pdb
-C:\Users\emil376g\source\repos\AsyncServerClient\AsyncClientServer.Server\bin\Debug\Newtonsoft.Json.xml
-C:\Users\emil376g\source\repos\AsyncServerClient\AsyncClientServer.Server\bin\Debug\NuGet.Squirrel.pdb
-C:\Users\emil376g\source\repos\AsyncServerClient\AsyncClientServer.Server\bin\Debug\Splat.pdb
-C:\Users\emil376g\source\repos\AsyncServerClient\AsyncClientServer.Server\bin\Debug\Squirrel.pdb
 C:\Users\emil376g\source\repos\AsyncServerClient\AsyncClientServer.Server\obj\Debug\AsyncClientServer.Server.csprojAssemblyReference.cache
 C:\Users\emil376g\source\repos\AsyncServerClient\AsyncClientServer.Server\obj\Debug\AsyncClientServer.Server.csproj.CoreCompileInputs.cache
 C:\Users\emil376g\source\repos\AsyncServerClient\AsyncClientServer.Server\obj\Debug\AsyncClientServer.Server.exe.manifest
