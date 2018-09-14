@@ -41,7 +41,7 @@ namespace AsyncClientServer.Client
                 {
                     throw new Exception("No IPv4 address for server");
                 }
-                await client.ConnectAsync(IPAddress.Parse("185.19.132.180"), port); // Connect
+                await client.ConnectAsync(IPAddress.Parse("10.143.78.18"), port); // Connect
                 return client;
             }
             catch (Exception)
